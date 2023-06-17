@@ -24,6 +24,9 @@
   <div>
     <%= form.label :pictures %>
     <%= form.file_field :pictures, multiple: true %>
+    <% product.pictures.each do |picture| %>
+      <%= link_to image_tag(product.picture_as_thumbnail(picture)), picture %>
+    <% end %>
   </div>
 
   <div class="inline">
