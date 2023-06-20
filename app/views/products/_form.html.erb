@@ -26,7 +26,7 @@
     <% if @product.pictures.attached? %>
       <% @product.pictures.each do |picture| %>
         <%= link_to image_tag(product.picture_as_thumbnail(picture)), picture %>
-        <%= link_to "remove picture", product_picture_path(product), data: { turbo_method: :delete} %>
+        <%= link_to "remove picture", product_picture_path(@product, blob_id: picture.blob_id), data: { turbo_method: :delete} %>
         <%= form.hidden_field :pictures, multiple: true, value: picture.signed_id %>
       <% end %>
     <% end %>
