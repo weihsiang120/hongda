@@ -22,12 +22,14 @@
   </div>
 
   <div>
-    <%= form.file_field :pictures, multiple: true %>
+    <%= form.file_field :pictures, multiple: true, class:'block' %>
     <% if @product.pictures.attached? %>
       <% @product.pictures.each do |picture| %>
-        <div id="<%= dom_id(picture, :picture) %>">
+        <div id="<%= dom_id(picture, :picture) %>" class="relative inline-block">
           <%= link_to image_tag(product.picture_as_thumbnail(picture)), picture %>
-          <%= link_to "remove picture", product_picture_path(@product, blob_id: picture.blob_id), data: { turbo_method: :delete} %>
+          <%= link_to product_picture_path(@product, blob_id: picture.blob_id), method: :delete, data: { turbo_method: :delete }, class:'inline-flex items-center justify-center bg-red-500 rounded-full w-4 h-4 hover:bg-red-700 hover:cursor absolute right-0 top-0' do %>
+            <span class="text-xs text-white">X</span>
+          <% end %>
           <%= form.hidden_field :pictures, multiple: true, value: picture.signed_id %>
         </div>
       <% end %>
