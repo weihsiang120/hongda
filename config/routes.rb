@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   resources :products do 
     resources :pictures, only: [:destroy], module: :products
   end
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
+  get "/about", to: "products#about"
+  get "/contact", to: "products#contact"
 end
