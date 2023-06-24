@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Products::PicturesController < ApplicationController
   include ActionView::RecordIdentifier
   before_action :set_product
@@ -7,7 +9,7 @@ class Products::PicturesController < ApplicationController
     @picture.purge_later
     respond_to do |format|
       format.html { redirect_to edit_product_path(@product) }
-      format.turbo_stream { render turbo_stream: turbo_stream.remove(dom_id(@picture, :picture))}
+      format.turbo_stream { render turbo_stream: turbo_stream.remove(dom_id(@picture, :picture)) }
     end
   end
 

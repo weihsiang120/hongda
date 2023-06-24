@@ -12,3 +12,22 @@ require: rubocop-rails
 
 Style/Documentation:
   Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Metrics/BlockLength:
+  Exclude:
+    - 'development.rb'
+
+Metrics/LineLength:
+  Max: 120
+
+Metrics/MethodLength:
+  Max: 100
+
+Metrics/BlockLength:
+  Max: 100
+
+Metrics/AbcSize: 
+  Max: 100
