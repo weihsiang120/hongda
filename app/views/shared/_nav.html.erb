@@ -1,12 +1,16 @@
-<div class="w-full flex justify-between items-center bg-red-100 fixed top-0">
+<div class="w-full flex justify-center gap-2 items-center bg-red-100 fixed top-0">
   <div class="inline-block">
     <a href="<%= root_path %>">
       <%= image_tag 'logo.png', class:'w-16 inline-block' %>
     </a>
   </div>
-  <div class="inline-block">
-    <%= link_to "宏大廚具", root_path, class:'text-lg text-red-600 font-extrabold hover:duration-1000 hover:underline' %>
-    <%= link_to "作品集", products_path, class:'text-lg text-red-600 font-extrabold hover:duration-1000 hover:underline' %>
-    <%= link_to "關於宏大", about_path, class:'text-lg text-red-600 font-extrabold hover:duration-1000 hover:underline' %>
+  <div class="group text-red-600 transition-all duration-800 ease-in-out">
+    <%= link_to "宏大廚具", root_path, class:'text-lg font-extrabold text-red-600 bg-left-bottom bg-gradient-to-r from-red-300 to-red-600 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-1000 ease-out' %>
+  </div>
+  <div class="group text-red-600 transition-all duration-300 ease-in-out">
+    <%= link_to "作品集", products_path, class:'text-lg font-extrabold text-red-600 bg-left-bottom bg-gradient-to-r from-red-300 to-red-600 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-1000 ease-out' %>
+  </div>
+  <div class="group text-red-600 transition-all duration-300 ease-in-out">
+    <%= link_to "關於宏大", about_path, class:'text-lg font-extrabold text-red-600 bg-left-bottom bg-gradient-to-r from-red-300 to-red-600 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-1000 ease-out' %>
   </div>
 </div>
